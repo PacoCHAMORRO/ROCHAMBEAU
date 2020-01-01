@@ -2,11 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="HandheldFriendly" content="true">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
   <title>Rock, Paper, Scissors</title>
   <script src="app.js" defer></script>
-  <script type="text/javascript" src="http://livejs.com/live.js"></script>
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css?family=Ultra&display=swap" rel="stylesheet">
 
@@ -17,22 +18,34 @@
     <h1 class="game-title">.:ROCHAMBEAU:.</h1>
   </div>
   <div class="container">
+      <div class="game-log">
+        <div class="game_log__frame">
+          <div class="player-console">
+            <h1 class="player-title">YOU</h1>
+            <img id="option-image-p" src="paper.png" alt="PAPER">    
+          </div>
+          <div class="player-console">
+            <h1 class="player-title">PC</h1>
+            <img id="option-image-pc" src="paper.png" alt="PAPER">    
+          </div>
+        </div>
+      </div>
+      <div class="game-result">
+        <h1 id="result-message">GOOD PLAY!</h1>
+      </div>
       <div class="options">
-          <ul>
-            <li>
-                <button id="rock-btn" class="option-btn">&nbsp;ROCK!</button>
-            </li>
-            <li>
-                <button id="paper-btn" class="option-btn">&nbsp;PAPER!</button>
-            </li>
-            <li>
-                <button id="scissors-btn" class="option-btn">&nbsp;SCISSORS!</button>
-            </li>
-          </ul>
-      </div>
-      <div class="pc-tab">
-        <h1>PC : 00</h1>
-      </div>
+        <ul> 
+          <li>
+              <button id="rock-btn" class="option-btn">&nbsp;ROCK!</button>
+          </li>
+          <li>
+              <button id="paper-btn" class="option-btn">&nbsp;PAPER!</button>
+          </li>
+          <li>
+              <button id="scissors-btn" class="option-btn">&nbsp;SCISSORS!</button>
+          </li>
+        </ul>
+    </div>
   </div>
 
 </body>

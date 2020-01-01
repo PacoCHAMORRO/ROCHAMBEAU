@@ -27,10 +27,13 @@ const getPlayerChoice = (selection) => {
 const getComputerChoice = function() {
     const randomValue = Math.random();
     if (randomValue < 0.34) {
+        changeImage('rock.png','option-image-pc');
         return ROCK;
     } else if (randomValue < 0.67) {
+        changeImage('paper.png','option-image-pc');
         return PAPER;
     } else {
+        changeImage('scissors.png','option-image-pc');
         return SCISSORS; 
     }
 }
@@ -62,17 +65,37 @@ function startGame(selection) {
      console.log(playerSelection);
      console.log(computerSelection);
      console.log(winner);
+     changeResultMessage(winner);
      gameIsRunning = false;
  }
 
+function changeImage(image, ID) {
+    document.getElementById(ID).src = image;
+}
+
+function changeResultMessage(result) {
+    if (result === PLAYER_WINS) {
+        document.getElementById('result-message').textContent = 'YOU WIN!';
+    } else if (result === COMPUTER_WINS) {
+        document.getElementById('result-message').textContent = 'YOU LOST!';
+    } else {
+        document.getElementById('result-message').textContent = 'DRAW!';
+    }
+    
+}
+
  paperBtn.addEventListener('click', function(){
      startGame(PAPER);
+     changeImage('paper.png','option-image-p');
  })
 
  rockBtn.addEventListener('click', function(){
     startGame(ROCK);
+    changeImage('rock.png','option-image-p');
 })
 
 scissorsBtn.addEventListener('click', function(){
     startGame(SCISSORS);
+    changeImage('scissors.png','option-image-p');
 })
+
